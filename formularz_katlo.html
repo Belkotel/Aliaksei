@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-	<html lang="pl-PL">
-	<html>
-			<head>
-					<meta charset="utf-8">
-					<title>formularz-Katlo </title>
-			</head>
-			<body>
-			tutaj będzie formularz<br>
-			<A HREF="index.html"> Wróć </A>
-			</body>
-	</html>
+<html lang="pl-PL">
+<head>
+	<meta charset="utf-8">
+	<title>formularz-Katlo </title>
+	<style>
+		.personal-info {
+			display: flex;
+			width: 300px;
+			height: 222px;
+			padding: 27px 36px;
+		}
+		.left-part, .right-part {
+			display: flex;
+			flex-direction: column;
+			column-gap: 16px;
+		}
+		.left-part label {
+			height: 30px;
+			background: rgb(255, 0, 0);
+			display: block;
+		}
+		.right-part input {
+			height: 30px;
+			background: #535353;
+			display: block;
+		}
+	</style>
+</head>
+
+<body bgcolor="BA55D3">
+	tutaj będzie formularz<br>
+	<form enctype="text/plain" action="mailto:alexkotel2006@gmail.com" subject="formularz_dane" method="Post">
+		<div class="personal-info">
+			<div class="left-part">
+				<label for="name">Imię</label>
+				<label for="surname">Nazwisko</label>
+				<label for="email">Adres e-mail</label>
+				<label for="phone">Numer telefonu</label>
+			</div>
+			<div class="right-part">
+				<input type="text" id="name">
+				<input type="text" id="surname">
+				<input type="email" id="email">
+				<input type="tel" id="phone">
+			</div>
+		</div>
+	</form>
+	<A HREF="index.html"> Wróć </A>
+</body>
+
+</html>
