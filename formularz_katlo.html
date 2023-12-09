@@ -7,25 +7,34 @@
 		* {
 			box-sizing: border-box;
 		}
+		body {
+			background: #BA55D3;
+		}
 		.personal-info {
 			background-color: white;
-			display: flex;
-			width: 350px;
-			height: 222px;
 			padding: 27px 36px;
+			width: 350px;
 		}
-		.left-part, .right-part {
+		.personal-info h1 {
+			margin: 0;
+			margin-bottom: 10px;
+
+		}
+		.personal-info__body {
+			display: flex;
+		}
+		.personal-info__left-part, .personal-info__right-part {
 			display: flex;
 			flex-direction: column;
 			gap: 16px;
 		}
-		.left-part label {
+		.personal-info__left-part label {
 			height: 30px;
 			width: 140px;
 			background: rgb(255, 0, 0);
 			display: block;
 		}
-		.right-part input {
+		.personal-info__right-part input {
 			height: 30px;
 			width: 140px;
 			background: #535353;
@@ -34,25 +43,28 @@
 	</style>
 </head>
 
-<body bgcolor="BA55D3">
-	tutaj będzie formularz<br>
+<body>
+	<h1>tutaj będzie formularz</h1>
 	<form enctype="text/plain" action="mailto:alexkotel2006@gmail.com" subject="formularz_dane" method="Post">
 		<div class="personal-info">
-			<div class="left-part">
-				<label for="name">Imię</label>
-				<label for="surname">Nazwisko</label>
-				<label for="email">Adres e-mail</label>
-				<label for="phone">Numer telefonu</label>
-			</div>
-			<div class="right-part">
-				<input type="text" id="name">
-				<input type="text" id="surname">
-				<input type="email" id="email">
-				<input type="tel" id="phone">
+			<h1>Dane podstawowe</h1>
+			<div class="personal-info__body">
+				<div class="personal-info__left-part">
+					<label for="name">Imię</label>
+					<label for="surname">Nazwisko</label>
+					<label for="email">Adres e-mail</label>
+					<label for="phone">Numer telefonu</label>
+				</div>
+				<div class="personal-info__right-part">
+					<input type="text" id="name">
+					<input type="text" id="surname">
+					<input type="email" id="email">
+					<input type="tel" id="phone">
+				</div>
 			</div>
 		</div>
 	</form>
-	<A HREF="index.html"> Wróć </A>
+	<a href="index.html"> Wróć </a>
 </body>
 
 </html>
