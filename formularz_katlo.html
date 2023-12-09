@@ -10,15 +10,18 @@
 		body {
 			background: #BA55D3;
 		}
-		.personal-info {
-			background-color: white;
-			padding: 27px 36px;
+		.card {
 			width: 350px;
+			padding: 27px 36px;
+			background-color: #c36cd9;
+			border-radius: 5px;
 		}
-		.personal-info h1 {
+		.card__header {
 			margin: 0;
 			margin-bottom: 10px;
-
+		}
+		.card__body {
+			#
 		}
 		.personal-info__body {
 			display: flex;
@@ -46,9 +49,9 @@
 <body>
 	<h1>Ankieta społeczna</h1>
 	<form enctype="text/plain" action="mailto:alexkotel2006@gmail.com" subject="formularz_dane" method="Post">
-		<div class="personal-info">
-			<h1>Dane podstawowe</h1>
-			<div class="personal-info__body">
+		<div class="card personal-info">
+			<h1 class="card__header">Dane podstawowe</h1>
+			<div class="card__body personal-info__body">
 				<div class="personal-info__left-part">
 					<label for="name">Imię</label>
 					<label for="surname">Nazwisko</label>
