@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
+
 <head>
 	<meta charset="utf-8">
 	<title>formularz-Katlo </title>
@@ -7,67 +8,121 @@
 		* {
 			box-sizing: border-box;
 		}
+
 		body {
-			background: #BA55D3;
+			padding-top: 70px;
+			background: #00FF29;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
+
+		h1 {
+			margin: 0;
+		}
+
+		hr {
+			border: none;
+			height: 2px;
+			background-color: #2907FB;
+			margin-bottom: 20px;
+		}
+
+		input,
+		textarea,
+		select {
+			border: none;
+			background: #EBFF00;
+		}
+
+		.header {
+			margin-bottom: 50px;
+			font-size: 54px;
+			text-align: center;
+			background-color: #FF0000;
+			padding: 20px 95px;
+			width: 680px;
+			height: 100px;
+			border-radius: 100px;
+			color: #2907FB;
+		}
+
+		.form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
 		.card {
-			width: 350px;
-			padding: 27px 36px;
-			background-color: #c36cd9;
+			padding: 20px 40px 30px 40px;
+			background-color: #FF0000;
 			border-radius: 5px;
 		}
+
 		.card__header {
-			margin: 0;
 			margin-bottom: 10px;
+			color: #00FF29;
 		}
+
 		.card__body {
-			#
+			color: #2907FB;
 		}
+
 		.personal-info__body {
 			display: flex;
 		}
-		.personal-info__left-part, .personal-info__right-part {
+
+		.personal-info__left-part,
+		.personal-info__right-part {
 			display: flex;
 			flex-direction: column;
 			gap: 16px;
 		}
+
 		.personal-info__left-part label {
+			display: flex;
+			align-items: center;
+			font-size: 18px;
 			height: 30px;
 			width: 140px;
 			background: rgb(255, 0, 0);
-			display: block;
 		}
+
 		.personal-info__right-part input {
+			border-radius: 5px;
+			padding-left: 10px;
+			font-size: 18px;
 			height: 30px;
-			width: 140px;
-			background: #535353;
+			width: 244px;
 			display: block;
 		}
 	</style>
 </head>
 
 <body>
-	<h1>Ankieta społeczna</h1>
+	<h1 class="header">Formularz społeczny</h1>
 	<form enctype="text/plain" action="mailto:alexkotel2006@gmail.com" subject="formularz_dane" method="Post">
-		<div class="card personal-info">
+		<div class="buttons"> <!--позже--> </div>
+		<div class="card">
 			<h1 class="card__header">Dane podstawowe</h1>
+			<hr>
 			<div class="card__body personal-info__body">
 				<div class="personal-info__left-part">
 					<label for="name">Imię</label>
-					<label for="surname">Nazwisko</label>
+					<label for="password">Hasło od GPE</label>
 					<label for="email">Adres e-mail</label>
 					<label for="phone">Numer telefonu</label>
 				</div>
 				<div class="personal-info__right-part">
-					<input type="text" id="name">
-					<input type="text" id="surname">
-					<input type="email" id="email">
-					<input type="tel" id="phone">
+					<input type="text" id="name" value="Aleksei">
+					<input type="password" id="password">
+					<input type="email" id="email" value="lubieWAI@edu.gdansk.pl">
+					<input type="tel" id="phone" maxlength="9" placeholder="123456789">
 				</div>
 			</div>
 		</div>
 	</form>
-	<a href="index.html">Wróc</a>
+
 </body>
 
 </html>
