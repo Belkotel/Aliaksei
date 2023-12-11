@@ -29,7 +29,9 @@
 		}
 
 		ul {
+			/* убираем точечки у списка */
 			list-style-type: none;
+			/* обнуляем отступы */
 			padding: 0;
 			margin: 0;
 		}
@@ -161,13 +163,36 @@
 			justify-content: space-between;
 			margin-bottom: 20px;
 		}
+
+		.buttons {
+			display: flex;
+			gap: 40px;
+		}
+
+		button {
+			border: none;
+			width: 200px;
+			height: 50px;
+			background: #D9D9D9;
+			font-size: 24px;
+			font-weight: bold;
+			border-radius: 5px;
+		}
+
+		button:hover {
+			color: #00ff29;
+			background: #2907fb;
+		}
 	</style>
 </head>
 
 <body>
 	<h1 class="header">Formularz społeczny</h1>
 	<form enctype="text/plain" action="mailto:alexkotel2006@gmail.com" subject="formularz_dane" method="Post">
-		<div class="buttons"><!--позже--></div>
+		<div class="buttons">
+			<button type="button" id="back-index" onclick="window.location.href = 'index.html'">Wróć do index</button>
+			<button type="button" id="change-background">Zmień tło</button>
+		</div>
 		<div class="card personal-info">
 			<h1 class="card__header">Dane podstawowe</h1>
 			<hr />
@@ -195,7 +220,7 @@
 					<option value="green">Zielony</option>
 					<option value="blue">Niebieski</option>
 					<option value="yellow">Żółty</option>
-					<option value="white">Biały</option>
+					<option selected value="white">Biały</option>
 				</select>
 			</div>
 		</div>
@@ -229,6 +254,23 @@
 			</div>
 		</div>
 	</form>
+	<script>
+		// изменение фона
+		let body = document.getElementsByTagName('body')[0];
+		let button = document.getElementById('change-background');
+		let green = 'rgb(0, 255, 41)';
+		let blue = '#2907fb';
+
+		body.style.background = green;
+		button.addEventListener('click', () => {
+			if (body.style.background == green) {
+				body.style.background = blue;
+			} else {
+				body.style.background = green;
+			}
+		})
+		
+	</script>
 </body>
 
 </html>
