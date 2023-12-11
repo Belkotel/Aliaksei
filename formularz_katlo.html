@@ -2,8 +2,8 @@
 <html lang="pl-PL">
 
 <head>
-	<meta charset="utf-8">
-	<title>formularz-Katlo </title>
+	<meta charset="utf-8" />
+	<title>formularz-Katlo</title>
 	<style>
 		/* это свойство говорит браузеру учитывать 
 		любые границы и внутренние отступы в значениях,
@@ -19,13 +19,19 @@
 			/* верхний внутренний отступ */
 			padding-top: 70px;
 			/* цвет фона */
-			background: #00FF29;
+			background: #00ff29;
 			/* с помощью этого свойства элементы внутри этого контейнера можно располагать с помощью других свойств */
 			display: flex;
 			/* указывает что элементы распологаются в ряд */
 			flex-direction: column;
 			/* указывает что элементы распологаются по центру */
 			align-items: center;
+		}
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
 		}
 
 		h1 {
@@ -39,18 +45,36 @@
 			/* высота линии */
 			height: 2px;
 			/* цвет фона */
-			background: #2907FB;
+			background: #2907fb;
 			/* внешний отступ снизу */
 			margin-bottom: 20px;
 		}
 
+		/* обнуляем ненужные отступы и ставим свои */
+		input[type="radio"],
+		input[type=checkbox] {
+			margin: 0;
+			margin-right: 4px;
+		}
+
 		/* тут мы стилизуем инпуты, большие поля ввода и селекты
 		убираем у них рамку и делаем желтый фон */
-		input,
+		input[type="text"],
+		input[type="tel"],
+		input[type="password"],
+		input[type="email"],
 		textarea,
 		select {
+			height: 30px;
 			border: none;
-			background: #EBFF00;
+			background: #ebff00;
+			border-radius: 5px;
+			font-size: 18px;
+			padding-left: 10px;
+		}
+
+		select {
+			width: 100%;
 		}
 
 		.header {
@@ -61,7 +85,7 @@
 			/* выравнивание текста по центру(внутри самого элемента h1) */
 			text-align: center;
 			/* цвет фона */
-			background: #FF0000;
+			background: #ff0000;
 			/* внутрениие отступы */
 			padding: 20px 95px;
 			width: 680px;
@@ -69,16 +93,18 @@
 			/* скругление */
 			border-radius: 100px;
 			/* цвет текста */
-			color: #2907FB;
+			color: #2907fb;
 		}
 
-		.form {
+		form {
 			/* с помощью этого свойства элементы внутри этого контейнера можно располагать с помощью других свойств */
 			display: flex;
 			/* указывает что элементы распологаются в ряд */
 			flex-direction: column;
 			/* указывает что элементы распологаются по центру */
 			align-items: center;
+			/* отступы */
+			gap: 70px;
 		}
 
 		/* стилизация карточки */
@@ -86,7 +112,7 @@
 			/* внутренние отступы */
 			padding: 20px 40px 30px 40px;
 			/* цвет фона */
-			background: #FF0000;
+			background: #ff0000;
 			/* скругление */
 			border-radius: 5px;
 		}
@@ -96,13 +122,13 @@
 			/* нижний внешний отступ */
 			margin-bottom: 10px;
 			/* цвет текста */
-			color: #00FF29;
+			color: #00ff29;
 		}
 
 		/* основное тело карточки */
 		.card__body {
 			/* цвет текста */
-			color: #2907FB;
+			color: #2907fb;
 		}
 
 		.personal-info__body {
@@ -123,16 +149,17 @@
 			font-size: 18px;
 			height: 30px;
 			width: 140px;
-			background: rgb(255, 0, 0);
 		}
 
 		.personal-info__right-part input {
-			border-radius: 5px;
-			padding-left: 10px;
-			font-size: 18px;
-			height: 30px;
 			width: 244px;
 			display: block;
+		}
+
+		.programming__list {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
 		}
 	</style>
 </head>
@@ -140,10 +167,10 @@
 <body>
 	<h1 class="header">Formularz społeczny</h1>
 	<form enctype="text/plain" action="mailto:alexkotel2006@gmail.com" subject="formularz_dane" method="Post">
-		<div class="buttons"> <!--позже--> </div>
-		<div class="card">
+		<div class="buttons"><!--позже--></div>
+		<div class="card personal-info">
 			<h1 class="card__header">Dane podstawowe</h1>
-			<hr>
+			<hr />
 			<div class="card__body personal-info__body">
 				<div class="personal-info__left-part">
 					<label for="name">Imię</label>
@@ -152,15 +179,56 @@
 					<label for="phone">Numer telefonu</label>
 				</div>
 				<div class="personal-info__right-part">
-					<input type="text" id="name" value="Aleksei">
-					<input type="password" id="password">
-					<input type="email" id="email" value="lubieWAI@edu.gdansk.pl">
-					<input type="tel" id="phone" maxlength="9" placeholder="123456789">
+					<input name="name" type="text" id="name" value="Aliaksei" />
+					<input name="password" type="password" id="password" />
+					<input name="email" type="email" id="email" value="lubieWAI@edu.gdansk.pl" />
+					<input name="phone" type="tel" id="phone" maxlength="9" placeholder="123456789" />
 				</div>
 			</div>
 		</div>
+		<div class="card color">
+			<h1 class="card__header">Twój ulubiony kolor</h1>
+			<hr />
+			<div class="card__body">
+				<select name="color" id="color">
+					<option value="red">Czerwony</option>
+					<option value="green">Zielony</option>
+					<option value="blue">Niebieski</option>
+					<option value="yellow">Żółty</option>
+					<option value="white">Biały</option>
+				</select>
+			</div>
+		</div>
+		<div class="card programming">
+			<h1 class="card__header">Ulubiony język programowania</h1>
+			<hr />
+			<div class="card__body">
+				<ul class="programming__list">
+					<li>
+						<input type="radio" name="programming" id="python" value="python" />
+						<label for="python">Python</label>
+					</li>
+					<li>
+						<input type="radio" name="programming" id="js" value="js" />
+						<label for="js">Java Script</label>
+					</li>
+					<li>
+						<input type="radio" name="programming" id="assembler" value="assembler" />
+						<label for="assembler">Assembler</label>
+					</li>
+					<li>
+						<input type="radio" name="programming" id="cpp" value="cpp" />
+						<label for="cpp">C++</label>
+					</li>
+					<li>
+						<input type="radio" name="programming" id="other" value="other" />
+						<label for="other">Inne</label>
+					</li>
+				</ul>
+				<input type="text" placeholder="Wpisz swoje" />
+			</div>
+		</div>
 	</form>
-
 </body>
 
 </html>
