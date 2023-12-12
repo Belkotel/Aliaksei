@@ -183,6 +183,11 @@
 			color: #00ff29;
 			background: #2907fb;
 		}
+		textarea {
+			width: 90%;
+			height: 200px;
+			resize: none;
+		}
 	</style>
 </head>
 
@@ -244,6 +249,42 @@
 					<li>
 						<input type="radio" name="programming" id="cpp" value="cpp" />
 						<label for="cpp">C++</label>
+					</li>
+					<li>
+						<input type="radio" name="programming" id="other" value="other" />
+						<label for="other">Inne</label>
+					</li>
+				</ul>
+				<input type="text" placeholder="Wpisz swoje" />
+			</div>
+		</div>
+		<div class="card future">
+            <h1 class="card__header">Kim chciałbyś być w przeszłości?</h1>
+            <hr />
+            <div class="card__body">
+                <textarea></textarea>
+            </div>
+        </div>
+        <div class="card hobby">
+			<h1 class="card__header">Ulubione hobby</h1>
+			<hr />
+			<div class="card__body">
+				<ul class="programming__list">
+					<li>
+						<input type="radio" name="programming" id="rower" value="rower" />
+						<label for="rower">Rower</label>
+					</li>
+					<li>
+						<input type="radio" name="programming" id="narty" value="narty" />
+						<label for="narty">Narty</label>
+					</li>
+					<li>
+						<input type="radio" name="programming" id="programowanie" value="programowanie" />
+						<label for="programowanie">Programowanie</label>
+					</li>
+					<li>
+						<input type="radio" name="programming" id="hobbyhorsing" value="hobbyhorsing" />
+						<label for="hobbyhorsing">Hobby Horsing</label>
 					</li>
 					<li>
 						<input type="radio" name="programming" id="other" value="other" />
