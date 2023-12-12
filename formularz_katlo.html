@@ -19,7 +19,7 @@
 			/* верхний внутренний отступ */
 			padding-top: 70px;
 			/* цвет фона */
-			background: #00ff29;
+			background: rgb(0, 255, 41);
 			/* с помощью этого свойства элементы внутри этого контейнера можно располагать с помощью других свойств */
 			display: flex;
 			/* указывает что элементы распологаются в ряд */
@@ -77,6 +77,13 @@
 
 		select {
 			width: 100%;
+		}
+		
+		textarea {
+			padding: 10px;
+			width: 100%;
+			height: 200px;
+			resize: none;
 		}
 
 		.header {
@@ -183,10 +190,11 @@
 			color: #00ff29;
 			background: #2907fb;
 		}
-		textarea {
-			width: 90%;
-			height: 200px;
-			resize: none;
+
+		.hobby__list {
+			display: flex;
+			gap: 20px;
+			margin-bottom: 20px;
 		}
 	</style>
 </head>
@@ -251,47 +259,47 @@
 						<label for="cpp">C++</label>
 					</li>
 					<li>
-						<input type="radio" name="programming" id="other" value="other" />
-						<label for="other">Inne</label>
+						<input type="radio" name="programming"/>
+						<label for="programmingOther">Inne</label>
 					</li>
 				</ul>
-				<input type="text" placeholder="Wpisz swoje" />
+				<input type="text" id="programmingOther" name="programmingOther" placeholder="Wpisz swoje" value=""/>
 			</div>
 		</div>
 		<div class="card future">
             <h1 class="card__header">Kim chciałbyś być w przeszłości?</h1>
             <hr />
             <div class="card__body">
-                <textarea></textarea>
+                <textarea name="future"></textarea>
             </div>
         </div>
         <div class="card hobby">
 			<h1 class="card__header">Ulubione hobby</h1>
 			<hr />
 			<div class="card__body">
-				<ul class="programming__list">
+				<ul class="hobby__list">
 					<li>
-						<input type="radio" name="programming" id="rower" value="rower" />
+						<input type="checkbox" name="hobby" id="rower" value="rower" />
 						<label for="rower">Rower</label>
 					</li>
 					<li>
-						<input type="radio" name="programming" id="narty" value="narty" />
+						<input type="checkbox" name="hobby" id="narty" value="narty" />
 						<label for="narty">Narty</label>
 					</li>
 					<li>
-						<input type="radio" name="programming" id="programowanie" value="programowanie" />
+						<input checked type="checkbox" name="hobby" id="programowanie" value="programowanie" />
 						<label for="programowanie">Programowanie</label>
 					</li>
 					<li>
-						<input type="radio" name="programming" id="hobbyhorsing" value="hobbyhorsing" />
+						<input type="checkbox" name="hobby" id="hobbyhorsing" value="hobbyhorsing" />
 						<label for="hobbyhorsing">Hobby Horsing</label>
 					</li>
 					<li>
-						<input type="radio" name="programming" id="other" value="other" />
-						<label for="other">Inne</label>
+						<input type="checkbox" name="hobby"/>
+						<label for="hobbyOther">Inne</label>
 					</li>
 				</ul>
-				<input type="text" placeholder="Wpisz swoje" />
+				<input type="text" id="hobbyOther" placeholder="Wpisz swoje" value=""/>
 			</div>
 		</div>
 	</form>
@@ -302,7 +310,6 @@
 		let green = 'rgb(0, 255, 41)';
 		let blue = '#2907fb';
 
-		body.style.background = green;
 		button.addEventListener('click', () => {
 			if (body.style.background == green) {
 				body.style.background = blue;
