@@ -210,6 +210,15 @@
 			flex-direction: column;
 			gap: 10px;
 		}
+		.os__list {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		.mama__list {
+			display: flex;
+			gap: 36px;
+		}
 	</style>
 </head>
 
@@ -383,6 +392,69 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+		<div class="card pizza">
+			<h1 class="card__header">Czy lubisz pizzę z ananasem?</h1>
+			<hr />
+			<div class="card__body">
+				<select name="pizza" id="pizza">
+					<option value="tak">Tak</option>
+					<option value="nie">Nie</option>
+					<option value="nieprobowalem">Nie próbowałem</option>
+				</select>
+			</div>
+		</div>
+		<div class="card os">
+			<h1 class="card__header">Jakiego systemu<br> operacyjnego używasz?</h1>
+			<hr />
+			<div class="card__body">
+				<ul class="os__list">
+					<li>
+						<input type="checkbox" name="os" id="win" value="win" />
+						<label for="win">Windows</label>
+					</li>
+					<li>
+						<input checked type="checkbox" name="os" id="lin" value="lin" />
+						<label for="lin">Linux</label>
+					</li>
+					<li>
+						<input type="checkbox" name="os" id="mac" value="mac" />
+						<label for="mac">macOS</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="card szkola">
+			<h1 class="card__header">Jak bardzo podoba ci się program szkolny?</h1>
+			<hr />
+			<div class="card__body">
+				<select name="szkola" id="szkola">
+					<option value="bardzo">Bardzo mi się podoba!</option>
+					<option value="podoba">Podoba mi się</option>
+					<option value="niepodoba">Nie podoba się mi</option>
+					<option value="nienawidze">Nienawidzę tego!</option>
+				</select>
+			</div>
+		</div>
+		<div class="card mama">
+			<h1 class="card__header">Kto jest dla ciebie ważniejszy,<br> ja czy twoja mama?</h1>
+			<hr />
+			<div class="card__body">
+				<ul class="mama__list">
+					<li>
+						<input type="radio" name="mama" id="ja" value="ja" />
+						<label for="ja">Ja</label>
+					</li>
+					<li>
+						<input type="radio" name="mama" id="mama" value="mama" />
+						<label for="mama">Mama</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="buttons">
+			<button type="button" id="wyslij">Wyślij</button>
+			<button type="button" id="czysc">Czyść</button>
 		</div>
 	</form>
 	<script>
